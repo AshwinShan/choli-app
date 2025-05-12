@@ -43,13 +43,8 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --color-green-500: oklch(72.3% .219 149.579);
-    --color-cyan-500: oklch(71.5% .143 215.221);
-    --color-cyan-800: oklch(45% .085 224.283);
     --color-blue-500: oklch(62.3% .214 259.815);
     --color-blue-600: oklch(54.6% .245 262.881);
-    --color-blue-700: oklch(48.8% .243 264.376);
-    --color-blue-800: oklch(42.4% .199 265.638);
     --color-slate-200: oklch(92.9% .013 255.508);
     --color-slate-600: oklch(44.6% .043 257.281);
     --color-gray-100: oklch(96.7% .003 264.542);
@@ -284,10 +279,6 @@
     z-index: 10;
   }
 
-  .m-2 {
-    margin: calc(var(--spacing) * 2);
-  }
-
   .mx-auto {
     margin-inline: auto;
   }
@@ -316,16 +307,8 @@
     margin-bottom: calc(var(--spacing) * 2);
   }
 
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
-  }
-
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
-  }
-
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
   }
 
   .block {
@@ -368,10 +351,6 @@
     width: 100%;
   }
 
-  .max-w-3\/4 {
-    max-width: 75%;
-  }
-
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
@@ -384,20 +363,12 @@
     max-width: 200px;
   }
 
-  .max-w-\[250px\] {
-    max-width: 250px;
-  }
-
   .max-w-md {
     max-width: var(--container-md);
   }
 
   .max-w-sm {
     max-width: var(--container-sm);
-  }
-
-  .min-w-1\/3 {
-    min-width: 33.3333%;
   }
 
   .cursor-pointer {
@@ -414,10 +385,6 @@
 
   .flex-col {
     flex-direction: column;
-  }
-
-  .flex-row {
-    flex-direction: row;
   }
 
   .flex-wrap {
@@ -515,20 +482,8 @@
     background-color: var(--color-blue-500);
   }
 
-  .bg-blue-600 {
-    background-color: var(--color-blue-600);
-  }
-
-  .bg-blue-700 {
-    background-color: var(--color-blue-700);
-  }
-
   .bg-gray-100 {
     background-color: var(--color-gray-100);
-  }
-
-  .bg-green-500 {
-    background-color: var(--color-green-500);
   }
 
   .bg-white {
@@ -649,18 +604,6 @@
 
   .text-blue-600 {
     color: var(--color-blue-600);
-  }
-
-  .text-blue-800 {
-    color: var(--color-blue-800);
-  }
-
-  .text-cyan-500 {
-    color: var(--color-cyan-500);
-  }
-
-  .text-cyan-800 {
-    color: var(--color-cyan-800);
   }
 
   .text-gray-500 {
