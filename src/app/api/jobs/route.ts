@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 const filePath = process.cwd() + "/src/app/data/jobs.json";
 
-// ✅ GET Endpoint - Fetch Jobs
+//  GET Endpoint - Fetch Jobs
 export async function GET() {
   try {
     const data = await fs.readFile(filePath, "utf-8");
@@ -14,14 +14,14 @@ export async function GET() {
   }
 }
 
-// ✅ POST Endpoint - Add Job
+// POST Endpoint - Add Job
 export async function POST(request: Request) {
   try {
     const newJob = await request.json();
 
-    console.log("Received new job:", newJob); // Debugging log
-
-    // ✅ Ensure Correct Job Structure
+    console.log("Received new job:", newJob);
+    
+    // Ensure the Job structure
     const formattedJob = {
       id: String(new Date().getTime()), // Unique ID based on timestamp
       title: newJob.title,
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
       isDeleted: false,
     };
 
-    // ✅ Save to `jobs.json`
+    // Save to `jobs.json`
     const data = await fs.readFile(filePath, "utf-8");
     const jobs = JSON.parse(data);
 

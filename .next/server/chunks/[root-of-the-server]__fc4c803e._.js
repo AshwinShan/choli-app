@@ -91,8 +91,8 @@ async function GET() {
 async function POST(request) {
     try {
         const newJob = await request.json();
-        console.log("Received new job:", newJob); // Debugging log
-        // ✅ Ensure Correct Job Structure
+        console.log("Received new job:", newJob);
+        // Ensure the Job structure
         const formattedJob = {
             id: String(new Date().getTime()),
             title: newJob.title,
@@ -131,7 +131,7 @@ async function POST(request) {
             isActive: true,
             isDeleted: false
         };
-        // ✅ Save to `jobs.json`
+        // Save to `jobs.json`
         const data = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(filePath, "utf-8");
         const jobs = JSON.parse(data);
         jobs.push(formattedJob);

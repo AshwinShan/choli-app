@@ -25,11 +25,10 @@ function MultiFilterDropDown({ options, filterData, categoryName, onFilterChange
     const toggleDropdown = ()=>setIsOpen((prev)=>!prev);
     const handleCheckboxChange = (value)=>{
         setSelectedValues((prevSelected)=>{
-            const updatedSelection = prevSelected.includes(value) ? prevSelected.filter((v)=>v !== value) // Remove if already selected
-             : [
+            const updatedSelection = prevSelected.includes(value) ? prevSelected.filter((v)=>v !== value) : [
                 ...prevSelected,
                 value
-            ]; // Add new selection
+            ];
             setTimeout(()=>onFilterChange(updatedSelection), 0);
             return updatedSelection;
         });

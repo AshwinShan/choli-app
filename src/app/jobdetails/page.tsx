@@ -32,7 +32,7 @@ export default function JobDetail({ params }: { params: { id: string } }) {
       if (selectedJob) {
         setJob(selectedJob);
       } else {
-        router.push("/jobs"); // Redirect if job not found
+        router.push("/jobs");
       }
     };
 

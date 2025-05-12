@@ -4,7 +4,7 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function JobDetail() {
-  const params = useParams(); // ✅ Use `useParams()` instead of directly accessing `params.id`
+  const params = useParams(); 
   const router = useRouter();
   type Job = {
     id: string;
@@ -27,7 +27,7 @@ export default function JobDetail() {
     const fetchJob = async () => {
       const response = await fetch(`/api/jobs`);
       const jobs = await response.json();
-      const selectedJob = jobs.find((j: any) => j.id === params.id); // ✅ Unwrap params correctly
+      const selectedJob = jobs.find((j: any) => j.id === params.id); 
 
       if (selectedJob) {
         setJob(selectedJob);

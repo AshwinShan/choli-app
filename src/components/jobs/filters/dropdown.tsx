@@ -23,8 +23,8 @@ export default function MultiFilterDropDown({
   const handleCheckboxChange = (value: string) => {
     setSelectedValues((prevSelected) => {
       const updatedSelection = prevSelected.includes(value)
-        ? prevSelected.filter((v) => v !== value) // Remove if already selected
-        : [...prevSelected, value]; // Add new selection
+        ? prevSelected.filter((v) => v !== value)
+        : [...prevSelected, value]; 
 
       setTimeout(() => onFilterChange(updatedSelection), 0);
       return updatedSelection;
