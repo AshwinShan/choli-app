@@ -388,5 +388,43 @@
     "updatedAt": 1747066373839,
     "isActive": true,
     "isDeleted": false
+  },
+  {
+    "id": "1747241565074",
+    "title": "q34324",
+    "company": {
+      "id": "1747241565074",
+      "name": "3243",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+    },
+    "location": "3434",
+    "description": {
+      "description": "3434",
+      "aboutTheCompany": "Company information will be updated soon.",
+      "aboutTheRole": "Role details will be refined.",
+      "aboutTheTeam": "Team description will be added.",
+      "responsibilities": [],
+      "requirements": [],
+      "benefits": [],
+      "role": "q34324",
+      "industry": "Technology",
+      "employmentType": "343",
+      "education": []
+    },
+    "datePosted": "2025-05-14T16:52:45.074Z",
+    "experience": {
+      "min": 0,
+      "max": 0
+    },
+    "salary": {
+      "min": 0,
+      "max": 0
+    },
+    "skills": [],
+    "postedBy": "admin@example.com",
+    "createdAt": 1747241565074,
+    "updatedAt": 1747241565074,
+    "isActive": true,
+    "isDeleted": false
   }
 ]

@@ -25,7 +25,7 @@ export default function JobDetail() {
 
   useEffect(() => {
     const fetchJob = async () => {
-      const response = await fetch(`/api/jobs`);
+      const response = await fetch("/api/jobs");
       const jobs: Job[] = await response.json();
       const selectedJob = jobs.find((j) => j.id === params.id); 
 

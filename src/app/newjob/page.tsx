@@ -19,7 +19,7 @@ export default function AddJob() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch("/api/jobs", {
+    const response = await fetch("/app/api/jobs/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
