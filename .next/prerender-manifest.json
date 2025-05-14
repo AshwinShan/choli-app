@@ -30,7 +30,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/newjob": {
+    "/jobdetails": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -43,8 +43,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/newjob",
-      "dataRoute": "/newjob.rsc",
+      "srcRoute": "/jobdetails",
+      "dataRoute": "/jobdetails.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -78,6 +78,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/newjob": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/newjob",
+      "dataRoute": "/newjob.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/jobs": {
       "experimentalBypassFor": [
         {
@@ -101,37 +125,13 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
-    },
-    "/jobdetails": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/jobdetails",
-      "dataRoute": "/jobdetails.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "255762174987904c94c0793dc3d5160a",
-    "previewModeSigningKey": "5df9848bc6f1ef6e9bab970b1cd694bd50173347f6f9f3a3c6f330648be13bf8",
-    "previewModeEncryptionKey": "7ecbf49a066909021df241cfc1412528d1a30de91eb1a1936bd12edca62f0d5d"
+    "previewModeId": "fe238c4d9e4179bb051d9721062236aa",
+    "previewModeSigningKey": "28e711d7639f03c5681f9ae409f6a3f0fc8e306ec7db4ad9b9eb827096d86251",
+    "previewModeEncryptionKey": "2e1c381a2653e657f0496b70cf257796b7196b0ca111a126922ae2f432e4db9f"
   }
 }

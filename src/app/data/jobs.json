@@ -388,5 +388,81 @@
     "updatedAt": 1747066373839,
     "isActive": true,
     "isDeleted": false
+  },
+  {
+    "id": "1747239355243",
+    "title": "werw",
+    "company": {
+      "id": "1747239355243",
+      "name": "rwerwe",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+    },
+    "location": "ewrwr",
+    "description": {
+      "description": "werwr",
+      "aboutTheCompany": "Company information will be updated soon.",
+      "aboutTheRole": "Role details will be refined.",
+      "aboutTheTeam": "Team description will be added.",
+      "responsibilities": [],
+      "requirements": [],
+      "benefits": [],
+      "role": "werw",
+      "industry": "Technology",
+      "employmentType": "werwr",
+      "education": []
+    },
+    "datePosted": "2025-05-14T16:15:55.243Z",
+    "experience": {
+      "min": 0,
+      "max": 0
+    },
+    "salary": {
+      "min": 0,
+      "max": 0
+    },
+    "skills": [],
+    "postedBy": "admin@example.com",
+    "createdAt": 1747239355243,
+    "updatedAt": 1747239355243,
+    "isActive": true,
+    "isDeleted": false
+  },
+  {
+    "id": "1747239470157",
+    "title": "easrwer",
+    "company": {
+      "id": "1747239470157",
+      "name": "werwer",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+    },
+    "location": "werwer",
+    "description": {
+      "description": "ewrwr",
+      "aboutTheCompany": "Company information will be updated soon.",
+      "aboutTheRole": "Role details will be refined.",
+      "aboutTheTeam": "Team description will be added.",
+      "responsibilities": [],
+      "requirements": [],
+      "benefits": [],
+      "role": "easrwer",
+      "industry": "Technology",
+      "employmentType": "werwer",
+      "education": []
+    },
+    "datePosted": "2025-05-14T16:17:50.157Z",
+    "experience": {
+      "min": 0,
+      "max": 0
+    },
+    "salary": {
+      "min": 0,
+      "max": 0
+    },
+    "skills": [],
+    "postedBy": "admin@example.com",
+    "createdAt": 1747239470157,
+    "updatedAt": 1747239470157,
+    "isActive": true,
+    "isDeleted": false
   }
 ]

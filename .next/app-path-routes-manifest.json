@@ -3,8 +3,8 @@
   "/api/jobs/route": "/api/jobs",
   "/favicon.ico/route": "/favicon.ico",
   "/jobdetails/page": "/jobdetails",
-  "/jobs/page": "/jobs",
+  "/newjob/page": "/newjob",
   "/jobs/[id]/page": "/jobs/[id]",
-  "/page": "/",
-  "/newjob/page": "/newjob"
+  "/jobs/page": "/jobs",
+  "/page": "/"
 }

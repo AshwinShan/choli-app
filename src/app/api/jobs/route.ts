@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import { NextResponse } from "next/server";
 
-const filePath = process.cwd() + "/src/app/data/jobs.json";
+const filePath = process.cwd() + "/src/app/api/jobs/jobs.json";
 
 //  GET Endpoint - Fetch Jobs
 export async function GET() {
