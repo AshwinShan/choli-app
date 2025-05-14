@@ -39,7 +39,7 @@ export default function Header() {
         {routes.map((route) => {
           return (
             <Link key={route.label} href={route.path}>
-              <div className="flex items-center space-x-2 hover:cursor-pointer justify-between px-3">
+              <div className="flex items-center space-x-2 hover:cursor-pointer justify-between">
                 <div className={activeStyle(route.path)}>{route.icon}</div>
                 <div
                   className={
