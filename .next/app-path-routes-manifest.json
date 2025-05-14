@@ -1,10 +1,10 @@
 {
+  "/_not-found/page": "/_not-found",
   "/api/jobs/route": "/api/jobs",
   "/favicon.ico/route": "/favicon.ico",
-  "/_not-found/page": "/_not-found",
   "/jobdetails/page": "/jobdetails",
-  "/page": "/",
   "/jobs/page": "/jobs",
   "/jobs/[id]/page": "/jobs/[id]",
+  "/page": "/",
   "/newjob/page": "/newjob"
 }
