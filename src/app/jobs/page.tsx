@@ -22,7 +22,7 @@ export default function Jobs() {
         const response = await fetch("/api/jobs");
         const data = await response.json();
         setJobs(data);
-      } catch (err) {
+      } catch {
         setError("Failed to load jobs.");
       } finally {
         setLoading(false);
@@ -37,9 +37,7 @@ export default function Jobs() {
     employmentType: Array.from(
       new Set(jobs.map((job) => job.description.employmentType))
     ),
-    map: function (
-      arg0: (item: Company | string) => JSX.Element
-    ): import("react").ReactNode {
+    map: function (): import("react").ReactNode {
       throw new Error("Function not implemented.");
     },
   };

@@ -1,8 +1,10 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/api/jobs/route": "app/api/jobs/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/jobs/[id]/page": "app/jobs/[id]/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/jobdetails/page": "app/jobdetails/page.js",
+  "/page": "app/page.js",
   "/jobs/page": "app/jobs/page.js",
-  "/page": "app/page.js"
+  "/jobs/[id]/page": "app/jobs/[id]/page.js",
+  "/newjob/page": "app/newjob/page.js"
 }
