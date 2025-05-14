@@ -14,20 +14,25 @@ export default function Jobs() {
     location: [] as string[],
     employmentType: [] as string[],
   });
-
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     const fetchJobs = async () => {
-      const response = await fetch("/api/jobs");
-      const data = await response.json();
-      setJobs(data);
+      try {
+        const response = await fetch("/api/jobs");
+        const data = await response.json();
+        setJobs(data);
+      } catch (err) {
+        setError("Failed to load jobs.");
+      } finally {
+        setLoading(false);
+      }
     };
-
     fetchJobs();
   }, []);
 
-  // Prepare filters
   const filters: Filter = {
-    company: Array.from(new Set(jobs.map((job) => job.company))), // Extract unique company objects
+    company: Array.from(new Set(jobs.map((job) => job.company))),
     location: Array.from(new Set(jobs.map((job) => job.location))),
     employmentType: Array.from(
       new Set(jobs.map((job) => job.description.employmentType))
@@ -52,8 +57,9 @@ export default function Jobs() {
   const router = useRouter();
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <Filters filter={filters} setSelectedFilters={setSelectedFilters} />
-
+      <Filters filter={filters} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
+      {loading && <p className="text-gray-500">Loading jobs...</p>}
+      {error && <p className="text-red-500">{error}</p>}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-6xl p-5">
         {filteredJobs.map((job) => (
           <div

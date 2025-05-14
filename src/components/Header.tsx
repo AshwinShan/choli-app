@@ -26,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <div className="flex items-center justify-between bg-white p-5 shadow-md px-10">
+    <div className="flex items-center justify-between bg-white p-5 shadow-md">
       <Link href="/">
         <div className="flex items-center space-x-2">
           <BriefcaseBusiness className="text-blue-500"/>

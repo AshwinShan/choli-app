@@ -16,20 +16,16 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-function MultiFilterDropDown({ options, filterData, categoryName, onFilterChange }) {
+function MultiFilterDropDown({ categoryName, options, value, onFilterChange }) {
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [selectedValues, setSelectedValues] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const dropdownRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const toggleDropdown = ()=>setIsOpen((prev)=>!prev);
-    const handleCheckboxChange = (value)=>{
-        setSelectedValues((prevSelected)=>{
-            const updatedSelection = prevSelected.includes(value) ? prevSelected.filter((v)=>v !== value) : [
-                ...prevSelected,
-                value
-            ];
-            setTimeout(()=>onFilterChange(updatedSelection), 0);
-            return updatedSelection;
-        });
+    const handleCheckboxChange = (optionValue)=>{
+        const updatedValues = value.includes(optionValue) ? value.filter((v)=>v !== optionValue) : [
+            ...value,
+            optionValue
+        ];
+        onFilterChange(updatedValues);
     };
     // Close dropdown when clicking outside
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -43,7 +39,7 @@ function MultiFilterDropDown({ options, filterData, categoryName, onFilterChange
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
-    const displayText = selectedValues.length > 0 ? selectedValues.join(", ") : categoryName;
+    const displayText = value.length > 0 ? value.join(", ") : categoryName;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "w-full max-w-md mx-auto relative",
         ref: dropdownRef,
@@ -58,42 +54,42 @@ function MultiFilterDropDown({ options, filterData, categoryName, onFilterChange
                         children: displayText
                     }, void 0, false, {
                         fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-                        lineNumber: 62,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, this),
                     isOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronUp$3e$__["ChevronUp"], {
                         size: 16
                     }, void 0, false, {
                         fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-                        lineNumber: 63,
+                        lineNumber: 59,
                         columnNumber: 19
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                         size: 16
                     }, void 0, false, {
                         fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-                        lineNumber: 63,
+                        lineNumber: 59,
                         columnNumber: 45
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-                lineNumber: 57,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
             isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-2 p-4 bg-white border rounded-md shadow-md max-h-64 overflow-y-auto space-y-2 absolute z-10 w-full",
-                children: filterData.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                children: options.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                         className: "flex items-center gap-2 cursor-pointer text-sm",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "checkbox",
                                 value: item,
-                                checked: selectedValues.includes(item),
+                                checked: value.includes(item),
                                 onChange: ()=>handleCheckboxChange(item),
-                                className: "form-checkbox h-4 w-4 text-blue-600 "
+                                className: "form-checkbox h-4 w-4 text-blue-600"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-                                lineNumber: 74,
+                                lineNumber: 69,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -101,24 +97,24 @@ function MultiFilterDropDown({ options, filterData, categoryName, onFilterChange
                                 children: item
                             }, void 0, false, {
                                 fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-                                lineNumber: 81,
+                                lineNumber: 76,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, `${item}-${index}`, true, {
                         fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-                        lineNumber: 70,
+                        lineNumber: 65,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-                lineNumber: 68,
+                lineNumber: 63,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/jobs/filters/dropdown.tsx",
-        lineNumber: 55,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
 }
@@ -136,7 +132,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f
 "use client";
 ;
 ;
-function Filters({ filter, setSelectedFilters }) {
+function Filters({ filter, setSelectedFilters, selectedFilters }) {
     const filterCategories = [
         {
             name: "Company Name",
@@ -165,36 +161,51 @@ function Filters({ filter, setSelectedFilters }) {
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex flex-wrap mx-auto justify-around align-middle my-10 p-3 bg-white border-1 border-slate-200 w-3/4",
-        children: filterCategories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex flex-col mb-2",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-lg font-semibold font-sans text-slate-600 mb-2",
-                        children: category.name
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/jobs/filters/index.tsx",
-                        lineNumber: 49,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$filters$2f$dropdown$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        options: category,
-                        filterData: handleFilterData(category.key),
-                        categoryName: category.name,
-                        onFilterChange: (values)=>handleFilterChange(category.key, values)
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/jobs/filters/index.tsx",
-                        lineNumber: 52,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, category.key, true, {
+        children: [
+            filterCategories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-col mb-2",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "text-lg font-semibold font-sans text-slate-600 mb-2",
+                            children: category.name
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/filters/index.tsx",
+                            lineNumber: 57,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$filters$2f$dropdown$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            options: handleFilterData(category.key),
+                            value: selectedFilters[category.key],
+                            categoryName: category.name,
+                            onFilterChange: (values)=>handleFilterChange(category.key, values)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/filters/index.tsx",
+                            lineNumber: 60,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, category.key, true, {
+                    fileName: "[project]/src/components/jobs/filters/index.tsx",
+                    lineNumber: 56,
+                    columnNumber: 9
+                }, this)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                onClick: ()=>setSelectedFilters({
+                        company: [],
+                        location: [],
+                        employmentType: []
+                    }),
+                className: "text-sm text-blue-600 hover:underline mt-2 ml-4",
+                children: "Clear Filters"
+            }, void 0, false, {
                 fileName: "[project]/src/components/jobs/filters/index.tsx",
-                lineNumber: 48,
-                columnNumber: 9
-            }, this))
-    }, void 0, false, {
+                lineNumber: 70,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/src/components/jobs/filters/index.tsx",
-        lineNumber: 46,
+        lineNumber: 54,
         columnNumber: 5
     }, this);
 }
@@ -225,15 +236,22 @@ function Jobs() {
         location: [],
         employmentType: []
     });
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const fetchJobs = async ()=>{
-            const response = await fetch("/api/jobs");
-            const data = await response.json();
-            setJobs(data);
+            try {
+                const response = await fetch("/api/jobs");
+                const data = await response.json();
+                setJobs(data);
+            } catch (err) {
+                setError("Failed to load jobs.");
+            } finally{
+                setLoading(false);
+            }
         };
         fetchJobs();
     }, []);
-    // Prepare filters
     const filters = {
         company: Array.from(new Set(jobs.map((job)=>job.company))),
         location: Array.from(new Set(jobs.map((job)=>job.location))),
@@ -250,11 +268,28 @@ function Jobs() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$filters$2f$index$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 filter: filters,
+                selectedFilters: selectedFilters,
                 setSelectedFilters: setSelectedFilters
             }, void 0, false, {
                 fileName: "[project]/src/app/jobs/page.tsx",
-                lineNumber: 55,
+                lineNumber: 60,
                 columnNumber: 7
+            }, this),
+            loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-gray-500",
+                children: "Loading jobs..."
+            }, void 0, false, {
+                fileName: "[project]/src/app/jobs/page.tsx",
+                lineNumber: 61,
+                columnNumber: 19
+            }, this),
+            error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-red-500",
+                children: error
+            }, void 0, false, {
+                fileName: "[project]/src/app/jobs/page.tsx",
+                lineNumber: 62,
+                columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-6xl p-5",
@@ -272,7 +307,7 @@ function Jobs() {
                                                 children: job.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/jobs/page.tsx",
-                                                lineNumber: 65,
+                                                lineNumber: 71,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -280,13 +315,13 @@ function Jobs() {
                                                 children: job.company.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/jobs/page.tsx",
-                                                lineNumber: 68,
+                                                lineNumber: 74,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/jobs/page.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 70,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -299,18 +334,18 @@ function Jobs() {
                                             className: "rounded-full object-contain"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/jobs/page.tsx",
-                                            lineNumber: 73,
+                                            lineNumber: 79,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/jobs/page.tsx",
-                                        lineNumber: 72,
+                                        lineNumber: 78,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/jobs/page.tsx",
-                                lineNumber: 63,
+                                lineNumber: 69,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -318,7 +353,7 @@ function Jobs() {
                                 children: job.location
                             }, void 0, false, {
                                 fileName: "[project]/src/app/jobs/page.tsx",
-                                lineNumber: 82,
+                                lineNumber: 88,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -326,7 +361,7 @@ function Jobs() {
                                 children: job.description.industry
                             }, void 0, false, {
                                 fileName: "[project]/src/app/jobs/page.tsx",
-                                lineNumber: 85,
+                                lineNumber: 91,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -334,7 +369,7 @@ function Jobs() {
                                 children: job.description.employmentType
                             }, void 0, false, {
                                 fileName: "[project]/src/app/jobs/page.tsx",
-                                lineNumber: 88,
+                                lineNumber: 94,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -343,24 +378,24 @@ function Jobs() {
                                 children: "Apply Now"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/jobs/page.tsx",
-                                lineNumber: 91,
+                                lineNumber: 97,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, job.id, true, {
                         fileName: "[project]/src/app/jobs/page.tsx",
-                        lineNumber: 59,
+                        lineNumber: 65,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/jobs/page.tsx",
-                lineNumber: 57,
+                lineNumber: 63,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/jobs/page.tsx",
-        lineNumber: 54,
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }

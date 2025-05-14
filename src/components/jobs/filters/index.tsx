@@ -1,12 +1,18 @@
 "use client";
-import { Filter, Options } from "@/types/filter";
+import { Filter } from "@/types/filter";
 import MultiFilterDropDown from "./dropdown";
 
 export default function Filters({
   filter,
   setSelectedFilters,
+  selectedFilters,
 }: {
   filter: Filter;
+  selectedFilters: {
+    company: string[];
+    location: string[];
+    employmentType: string[];
+  };
   setSelectedFilters: React.Dispatch<
     React.SetStateAction<{
       company: string[];
@@ -22,11 +28,12 @@ export default function Filters({
   ];
 
   const handleFilterChange = (
-    categoryKey: string,
+    categoryKey: keyof Filter,
     selectedValues: string[]
   ) => {
     setSelectedFilters((prev) => ({ ...prev, [categoryKey]: selectedValues }));
   };
+
   const handleFilterData = (key: keyof Filter) => {
     const rawData = filter[key];
 
@@ -42,6 +49,7 @@ export default function Filters({
 
     return uniqueValues;
   };
+
   return (
     <div className="flex flex-wrap mx-auto justify-around align-middle my-10 p-3 bg-white border-1 border-slate-200 w-3/4">
       {filterCategories.map((category) => (
@@ -50,8 +58,8 @@ export default function Filters({
             {category.name}
           </h2>
           <MultiFilterDropDown
-            options={category}
-            filterData={handleFilterData(category.key)}
+            options={handleFilterData(category.key)}
+            value={selectedFilters[category.key as keyof typeof selectedFilters]}
             categoryName={category.name}
             onFilterChange={(values) =>
               handleFilterChange(category.key, values)
@@ -59,6 +67,14 @@ export default function Filters({
           />
         </div>
       ))}
+      <button
+        onClick={() =>
+          setSelectedFilters({ company: [], location: [], employmentType: [] })
+        }
+        className="text-sm text-blue-600 hover:underline mt-2 ml-4"
+      >
+        Clear Filters
+      </button>
     </div>
   );
 }

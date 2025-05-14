@@ -20,7 +20,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 function JobDetail() {
     _s();
-    const params = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])(); // ✅ Use `useParams()` instead of directly accessing `params.id`
+    const params = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const [job, setJob] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -31,7 +31,7 @@ function JobDetail() {
                     const jobs = await response.json();
                     const selectedJob = jobs.find({
                         "JobDetail.useEffect.fetchJob.selectedJob": (j)=>j.id === params.id
-                    }["JobDetail.useEffect.fetchJob.selectedJob"]); // ✅ Unwrap params correctly
+                    }["JobDetail.useEffect.fetchJob.selectedJob"]);
                     if (selectedJob) {
                         setJob(selectedJob);
                     } else {

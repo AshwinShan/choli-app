@@ -43,6 +43,7 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-red-500: oklch(63.7% .237 25.331);
     --color-blue-500: oklch(62.3% .214 259.815);
     --color-blue-600: oklch(54.6% .245 262.881);
     --color-slate-200: oklch(92.9% .013 255.508);
@@ -309,6 +310,10 @@
 
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
+  }
+
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
   }
 
   .block {
@@ -622,6 +627,10 @@
     color: var(--color-gray-800);
   }
 
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+
   .text-slate-600 {
     color: var(--color-slate-600);
   }
@@ -681,6 +690,12 @@
   @media (hover: hover) {
     .hover\:text-blue-500:hover {
       color: var(--color-blue-500);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:underline:hover {
+      text-decoration-line: underline;
     }
   }
 

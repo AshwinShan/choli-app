@@ -243,7 +243,7 @@
       "name": "Google",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
     },
-    "location": "aseadewedewwew",
+    "location": "Mountain View, California, USA",
     "description": {
       "description": "Design and maintain cloud infrastructure for scalable applications.",
       "aboutTheCompany": "An e-commerce, cloud computing, and artificial intelligence company.",
@@ -277,13 +277,13 @@
   },
   {
     "id": "1747063632040",
-    "title": "adsada",
+    "title": "UI Developer",
     "company": {
       "id": "1747063632040",
-      "name": "Google",
+      "name": "Kaya Tech",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
     },
-    "location": "ashwin",
+    "location": "New york",
     "description": {
       "description": "seesdw",
       "aboutTheCompany": "Company information will be updated soon.",
@@ -352,44 +352,6 @@
     "isDeleted": false
   },
   {
-    "id": "1747064158621",
-    "title": "asdw",
-    "company": {
-      "id": "1747064158621",
-      "name": "sadad",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-    },
-    "location": "sadad",
-    "description": {
-      "description": "sadadaqs",
-      "aboutTheCompany": "Company information will be updated soon.",
-      "aboutTheRole": "Role details will be refined.",
-      "aboutTheTeam": "Team description will be added.",
-      "responsibilities": [],
-      "requirements": [],
-      "benefits": [],
-      "role": "asdw",
-      "industry": "Technology",
-      "employmentType": "Contract",
-      "education": []
-    },
-    "datePosted": "2025-05-12T15:35:58.621Z",
-    "experience": {
-      "min": 0,
-      "max": 0
-    },
-    "salary": {
-      "min": 0,
-      "max": 0
-    },
-    "skills": [],
-    "postedBy": "admin@example.com",
-    "createdAt": 1747064158621,
-    "updatedAt": 1747064158621,
-    "isActive": true,
-    "isDeleted": false
-  },
-  {
     "id": "1747066373839",
     "title": "SAP Analyst",
     "company": {
@@ -426,43 +388,6 @@
     "updatedAt": 1747066373839,
     "isActive": true,
     "isDeleted": false
-  },
-  {
-    "id": "1747068178951",
-    "title": "adsdre",
-    "company": {
-      "id": "1747068178951",
-      "name": "sadesdsd",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-    },
-    "location": "asdsad",
-    "description": {
-      "description": "sdfsfdsd",
-      "aboutTheCompany": "Company information will be updated soon.",
-      "aboutTheRole": "Role details will be refined.",
-      "aboutTheTeam": "Team description will be added.",
-      "responsibilities": [],
-      "requirements": [],
-      "benefits": [],
-      "role": "adsdre",
-      "industry": "Technology",
-      "employmentType": "Full Time",
-      "education": []
-    },
-    "datePosted": "2025-05-12T16:42:58.951Z",
-    "experience": {
-      "min": 0,
-      "max": 0
-    },
-    "salary": {
-      "min": 0,
-      "max": 0
-    },
-    "skills": [],
-    "postedBy": "admin@example.com",
-    "createdAt": 1747068178951,
-    "updatedAt": 1747068178951,
-    "isActive": true,
-    "isDeleted": false
   }
+
 ]
