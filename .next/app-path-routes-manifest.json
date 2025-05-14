@@ -1,9 +1,9 @@
 {
-  "/_not-found/page": "/_not-found",
   "/api/jobs/route": "/api/jobs",
+  "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
-  "/jobs/page": "/jobs",
-  "/newjob/page": "/newjob",
   "/jobs/[id]/page": "/jobs/[id]",
+  "/newjob/page": "/newjob",
+  "/jobs/page": "/jobs",
   "/page": "/"
 }
