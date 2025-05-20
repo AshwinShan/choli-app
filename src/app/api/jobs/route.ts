@@ -6,6 +6,11 @@ const filePath = process.env.NODE_ENV === "production" ? "/tmp/jobs.json" : proc
 //  GET Endpoint - Fetch Jobs
 export async function GET() {
   try {
+    const dataFile = await fs.stat(filePath);
+    if (!dataFile.isFile()) {
+      console.error("File not found:", filePath);
+      fs.writeFile(filePath, JSON.stringify([]), "utf-8");
+    }
     const data = await fs.readFile(filePath, "utf-8");
     return NextResponse.json(JSON.parse(data));
   } catch (error) {
