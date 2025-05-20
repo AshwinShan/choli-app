@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import { NextResponse } from "next/server";
 
-const filePath = process.cwd() + "/src/app/api/jobs/jobs.json";
+const filePath = process.env.NODE_ENV === "production" ? "/tmp/jobs.json" : process.cwd() + "/src/app/api/jobs/jobs.json";
 
 //  GET Endpoint - Fetch Jobs
 export async function GET() {
@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const newJob = await request.json();
 
     console.log("Received new job:", newJob);
-    
+
     // Ensure the Job structure
     const formattedJob = {
       id: String(new Date().getTime()), // Unique ID based on timestamp
