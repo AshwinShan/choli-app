@@ -6,14 +6,13 @@ const filePath = process.env.NODE_ENV === "production" ? "/tmp/jobs.json" : proc
 //  GET Endpoint - Fetch Jobs
 export async function GET() {
   try {
-    const dataFile = await fs.stat(filePath);
-    if (!dataFile.isFile()) {
-      console.error("File not found:", filePath);
-      fs.writeFile(filePath, JSON.stringify([]), "utf-8");
-    }
+    await fs.stat(filePath);
     const data = await fs.readFile(filePath, "utf-8");
     return NextResponse.json(JSON.parse(data));
-  } catch (error) {
+  } catch (error: any) {
+    if (error.code === "ENOENT" && error.syscall === "stat") {
+      await fs.writeFile(filePath, JSON.stringify([]), "utf-8");
+    }
     console.error("Error reading jobs.json:", error);
     return NextResponse.json({ error: "Failed to fetch jobs" }, { status: 500 });
   }
